@@ -33,9 +33,13 @@ function App() {
         })
       };
 
-      const response = await fetch(endPoint, requestOptions);
+      const response = await fetch(endPoint + "language/:analyze-text?api-version=2023-04-01", requestOptions);
+      if (response.status !== 200) {
+        throw response.status;
+      }
       const data = await response.json();
       setResponse(data);
+      console.log(data);
     } catch (error) {
       alert('Error:', error);
     }
@@ -85,7 +89,8 @@ function App() {
             <input 
               value={apiKey} 
               onChange={(e) => setApiKey(e.target.value)}
-              placeholder='Enter API Key'></input>
+              placeholder='Enter API Key'
+              type='password'></input>
           </div>
       </div>
       <div class="content bordered">
