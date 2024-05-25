@@ -103,9 +103,6 @@ function App() {
       <div className="details" class="bordered">{renderDetails()}
         <div className="indicator">{renderIndicator()}</div> 
       </div>
-      <div class="footer bordered">
-          <p>&copy; 2024 My Website</p>
-      </div>
     </div>
   );
 }
